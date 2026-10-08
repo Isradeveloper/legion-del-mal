@@ -21,9 +21,30 @@ on:
           - "Darkseid"
           - "Brainiac"
 
+      prioridad:
+        description: "Prioridad del mensaje"
+        required: true
+        type: choice
+        options:
+          - "Alta"
+          - "Media"
+          - "Baja"
+
+      mensaje:
+        description: "Mensaje a enviar"
+        required: false
+        default: "Mensaje por defecto"
+        type: string
+
 jobs:
   transmitir-mensaje:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Imprimir inputs
+        run: |
+          echo: "Inputs: "
+          echo: ""
+          echo: "Villano: ${{ inputs.villano }}"
+          echo: "Mensaje: ${{ inputs.mensaje }}"
+          echo: "Prioridad: ${{ inputs.prioridad }}"
