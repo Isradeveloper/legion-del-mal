@@ -1,0 +1,15 @@
+name: Reclutamiento de agente
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  reporte-de-reclutamiento:
+    runs-on: ubuntu-latest
+    steps:
+      - name: El agente se presenta
+        run: echo "Hola, soy un agente de reclutamiento y estoy listo para ayudar."
