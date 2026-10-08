@@ -13,4 +13,16 @@ jobs:
           echo "Buscando los archivos de la legión del mal..."
           ls -la
           echo ""
-          "NO HAY NADA"
+          echo "NO HAY NADA"
+
+      - name: "Brainiac desbloquea la boveda"
+        uses: actions/checkout@v4
+
+      - name: "Ahora si vamos a ver los planes"
+        run: |
+          ls -la
+          echo ""
+          echo "Planes"
+          ls planes/
+          echo "Villanos"
+          ls villanos/
