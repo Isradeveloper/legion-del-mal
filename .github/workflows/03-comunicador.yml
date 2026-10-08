@@ -36,6 +36,18 @@ on:
         default: "Mensaje por defecto"
         type: string
 
+      cow_type:
+        description: "Tipo de vaca para el mensaje"
+        required: false
+        default: "eyes"
+        type: choice
+        options:
+          - "default"
+          - "eyes"
+          - "tux"
+          - "dragon"
+          - "ghostbusters"
+
 jobs:
   transmitir-mensaje:
     runs-on: ubuntu-latest
@@ -54,4 +66,4 @@ jobs:
           echo ""
           echo "Fecha: $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
           echo "Mensaje"
-          cowsay -f eyes "${{ inputs.mensaje }}"
+          cowsay -f "${{ inputs.cow_type }}" "${{ inputs.mensaje }}"
