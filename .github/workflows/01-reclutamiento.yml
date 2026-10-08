@@ -21,3 +21,16 @@ jobs:
           echo "Nombre clave: ${{ github.actor }}"
           echo "Repositorio: ${{ github.repository }}"
           echo "contexto de github: ${{ toJSON(github) }}"
+
+      - name: Capacidades del agente
+        run: |
+          echo "CAPACIDADES DEL AGENTE"
+          echo "---------------------"
+          echo "Sistema operativo"
+          uname -a
+      - name: Reconocimiento del terreno
+        run: |
+          echo "RECONOCIMIENTO DEL TERRENO"
+          echo "-------------------------"
+          echo "Archivos en el repositorio:"
+          ls /
